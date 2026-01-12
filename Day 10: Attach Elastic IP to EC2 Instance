@@ -1,1 +1,33 @@
+# Attach an Elastic IP to an EC2 Instance
+This guide explains how to associate an Elastic IP (EIP) with an Amazon EC2 instance using both the AWS Management Console and the AWS CLI.
+
+---
+## Option 1: AWS Management Console
+
+### Step 1: Allocate an Elastic IP
+1. Open the **EC2 Dashboard**
+2. From the left navigation pane, select **Elastic IPs**
+3. Click **Allocate Elastic IP address**
+4. Leave the default settings and click **Allocate**
+
+---
+
+### Step 2: Associate the Elastic IP
+1. Select the allocated **Elastic IP**
+2. Click **Actions → Associate Elastic IP address**
+3. Configure the association:
+   - **Resource type**: Instance
+   - **Instance**: Select your EC2 instance
+   - **Private IP address**: Auto-selected (recommended)
+4. Click **Associate**
+
+✅ The Elastic IP is now attached to your EC2 instance.
+
+---
+
+## Option 2: AWS CLI
+
+### Step 1: Allocate an Elastic IP
+```bash
+aws ec2 allocate-address --domain vpc
 
