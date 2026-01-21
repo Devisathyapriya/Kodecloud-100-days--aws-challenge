@@ -1,0 +1,141 @@
+# Create an IAM Group in AWS (Step-by-Step Guide)
+
+This guide explains how to **create an IAM Group** and assign permissions using the **AWS Management Console**.
+
+---
+
+## What is an IAM Group?
+
+An **IAM Group** is a collection of IAM users.
+- Permissions are assigned to the group
+- Users inherit permissions automatically
+- Makes permission management easier and scalable
+
+---
+
+## Prerequisites
+
+- AWS account
+- Login as **Root user** or IAM user with:
+  - `iam:CreateGroup`
+  - `iam:AttachGroupPolicy`
+  - `iam:AddUserToGroup`
+
+---
+
+## Step 1: Login to AWS Console
+
+1. Open **AWS Management Console**
+2. Sign in using Root or Admin IAM user
+
+---
+
+## Step 2: Open IAM Service
+
+1. Go to **Services**
+2. Search for **IAM**
+3. Click **IAM**
+
+---
+
+## Step 3: Go to User Groups
+
+1. In the left navigation pane
+2. Click **User groups**
+3. Click **Create group**
+
+---
+
+## Step 4: Enter Group Details
+
+- **Group name**:  
+  Example: `Developers`
+
+---
+
+## Step 5: Attach Permissions Policies
+
+Select the policies required for the group:
+
+### Common Policy Examples
+
+- `AdministratorAccess`
+- `AmazonEC2ReadOnlyAccess`
+- `AmazonS3FullAccess`
+- `PowerUserAccess`
+
+You can:
+- Search policies
+- Attach multiple policies
+
+Click **Create group**
+
+---
+
+## Step 6: Add Users to the Group
+
+After group creation:
+
+1. Open the group
+2. Click **Add users**
+3. Select IAM users
+4. Click **Add users**
+
+---
+
+## Step 7: Verify Group Permissions
+
+1. Open the group
+2. Check:
+   - Attached policies
+   - Users list
+   - Permissions summary
+
+---
+
+## Best Practices
+
+- Use **groups instead of attaching policies directly to users**
+- Follow **least privilege principle**
+- Create separate groups:
+  - `Admins`
+  - `Developers`
+  - `ReadOnly`
+- Enable MFA for users in sensitive groups
+
+---
+
+## Common Issues & Fixes
+
+| Issue | Solution |
+|------|----------|
+| Users not inheriting permissions | Verify group policies |
+| Access denied | Policy may be too restrictive |
+| Too many permissions | Remove unused policies |
+
+---
+
+## Cost
+
+- IAM Groups are **FREE**
+- No additional charges
+
+---
+
+## Summary
+
+- IAM group created
+- Policies attached
+- Users added to group
+- Centralized permission management enabled
+
+---
+
+## References
+
+- AWS IAM Groups Documentation
+- IAM Best Practices
+
+---
+
+✅ **IAM Group successfully created**
